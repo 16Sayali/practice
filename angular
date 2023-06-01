@@ -1,0 +1,391 @@
+Angular 
+Install npm if not there 
+npm install -g npm
+mkdir angulardemo
+cd angulardemo
+Intall angular cli – npm install -g @angular/cli@latest
+ng version
+Ng new foldername(first.app)
+cd first.app
+ng serve
+Routing y
+CSS
+Generate component : ng generate component <component-name>
+
+
+register-form-component.html
+    <div class="container">
+      <label for="uname"><b>Username  </b></label>
+      <input type="text" #uname placeholder="Enter Username " name="uname" required><br><br>
+
+      <label for="uname"><b>Full Name   </b></label>
+      <input type="text" #fullname placeholder="Enter Full Name " name="fullname" required><br><br>
+
+      <label for="uname"><b>Email   </b></label>
+      <input type="text" #email placeholder="Enter Email  " name="email" required><br><br>
+  
+      <label for="uname"><b>Mobile Number   </b></label>
+      <input type="text" #mobileno placeholder="Enter Mobile Number " name="mobileno" required><br><br>
+  
+      <label for="psw"><b>Password    </b></label>
+      <input type="password" placeholder="Enter Password  " name="psw" required><br><br>
+
+      <label for="psw"><b>Repeat Password   </b></label>
+      <input type="password" placeholder="Enter Password  " name="psw" required><br><br>
+  
+      <button (click)="getValue(uname.value,fullname.value,email.value,mobileno.value)">Register</button><br><br>
+     
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+
+  <h1>Your Register Data is</h1>
+  <p>Username: {{displayusername}}</p>   
+  <p>Fullname: {{displayname}}</p>
+  <p>Email: {{displayemail}}</p>
+  <p>Mobile No: {{displaymobileNo}}</p>
+  
+  css
+  form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  ts
+  import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-register-form',
+  templateUrl: './register-form.component.html',
+  styleUrls: ['./register-form.component.css']
+})
+export class RegisterFormComponent {
+  title="Registration Form";
+  displayusername="";
+  displayname="";
+  displayemail="";
+  displaymobileNo="";
+
+  getValue(uname:string,fullname:string,email:string,mobileno:string){
+      this.displayusername=uname;
+      this.displayname=fullname;
+      this.displayemail=email;
+      this.displaymobileNo=mobileno;
+  }
+}
+
+user-login-component.html
+  
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" #uname placeholder="Enter Username" name="uname" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+  
+      <button (click)="getValue(uname.value)">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  
+
+  <p>Your username is: {{displayusername}}</p>
+  
+  css
+  form {
+    border: 3px solid #f1f1f1;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra style for the cancel button (red) */
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+
+  
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+  }
+  
+  /* The "Forgot password" text */
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn {
+      width: 100%;
+    }
+  }
+  
+  ts
+  import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-user-login',
+  templateUrl: './user-login.component.html',
+  styleUrls: ['./user-login.component.css']
+})
+export class UserLoginComponent {
+  title="Login Form";
+  displayusername="";
+
+  getValue(uname:string){
+      this.displayusername=uname;
+  
+  }
+
+}
+
+app.component.html
+<app-register-form></app-register-form> 
+<!--<app-user-login></app-user-login>-->
+
+
+
+
+
+
+
+ANGULAR COMMANDS
+Assignment 2c
+Angular Commands
+Microsoft Windows [Version 10.0.22621.1265]
+(c) Microsoft Corporation. All rights reserved.
+C:\Users\Dell>node -v
+v18.15.0
+C:\Users\Dell>npm install -g npm
+added 1 package in 12s
+18 packages are looking for funding
+run `npm fund` for details
+C:\Users\Dell>cd C:/Users/Dell
+C:\Users\Dell>mkdir AngularDemo
+C:\Users\Dell>cd AngularDemo
+C:\Users\Dell\AngularDemo>npm install -g @angular/cli
+npm WARN deprecated @npmcli/move-file@2.0.1: This functionality has been moved to @npmcli/fs
+added 256 packages in 43s
+33 packages are looking for funding
+run `npm fund` for details
+C:\Users\Dell\AngularDemo>ng --version
+Error: You need to specify a command before moving on. Use '--help' to view the available commands.
+C:\Users\Dell\AngularDemo>ng version
+? Would you like to share pseudonymous usage data about this project with the Angular Team
+at Google under Google's Privacy Policy at https://policies.google.com/privacy. For more
+details and how to change this setting, see https://angular.io/analytics. Yes
+Thank you for sharing pseudonymous usage data. Should you change your mind, the following command will disable this feature entirely:
+ng analytics disable --global
+Global setting: enabled
+Local setting: No local workspace configuration file.
+Effective status: enabled
+_ _ ____ _ ___
+/ \ _ __ __ _ _ _| | __ _ _ __ / ___| | |_ _|
+/ △ \ | '_ \ / _` | | | | |/ _` | '__| | | | | | |
+/ ___ \| | | | (_| | |_| | | (_| | | | |___| |___ | |
+/_/ \_\_| |_|\__, |\__,_|_|\__,_|_| \____|_____|___|
+|___/
+Angular CLI: 15.2.7
+Node: 18.15.0
+Package Manager: npm 9.6.5
+OS: win32 ia32
+Angular:
+...
+Package Version
+------------------------------------------------------
+@angular-devkit/architect 0.1502.7 (cli-only)
+@angular-devkit/core 15.2.7 (cli-only)
+@angular-devkit/schematics 15.2.7 (cli-only)
+@schematics/angular 15.2.7 (cli-only)
+C:\Users\Dell\AngularDemo>ng new first.app
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+CREATE first.app/angular.json (2715 bytes)
+CREATE first.app/package.json (1040 bytes)
+CREATE first.app/README.md (1062 bytes)
+CREATE first.app/tsconfig.json (901 bytes)
+CREATE first.app/.editorconfig (274 bytes) CREATE first.app/.gitignore (548 bytes)
+CREATE first.app/tsconfig.app.json (263 bytes)
+CREATE first.app/tsconfig.spec.json (273 bytes)
+CREATE first.app/.vscode/extensions.json (130 bytes)
+CREATE first.app/.vscode/launch.json (470 bytes)
+CREATE first.app/.vscode/tasks.json (938 bytes)
+CREATE first.app/src/favicon.ico (948 bytes)
+CREATE first.app/src/index.html (294 bytes)
+CREATE first.app/src/main.ts (214 bytes)
+CREATE first.app/src/styles.css (80 bytes)
+CREATE first.app/src/assets/.gitkeep (0 bytes)
+CREATE first.app/src/app/app-routing.module.ts (245 bytes)
+CREATE first.app/src/app/app.module.ts (393 bytes)
+CREATE first.app/src/app/app.component.html (23115 bytes)
+CREATE first.app/src/app/app.component.spec.ts (1082 bytes)
+CREATE first.app/src/app/app.component.ts (213 bytes)
+CREATE first.app/src/app/app.component.css (0 bytes)
+√ Packages installed successfully.
+warning: in the working copy of '.editorconfig', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.vscode/extensions.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.vscode/launch.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.vscode/tasks.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'angular.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/app-routing.module.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/app.component.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/app.component.spec.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/app.component.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/app/app.module.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/main.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/styles.css', LF will be replaced by CRLF the next time Git touches it warning: in the working copy of 'tsconfig.app.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tsconfig.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tsconfig.spec.json', LF will be replaced by CRLF the next time Git touches it
+Successfully initialized git.
+C:\Users\Dell\AngularDemo>ng serve
+Error: This command is not available when running the Angular CLI outside a workspace.
+C:\Users\Dell\AngularDemo>cd first.app
+C:\Users\Dell\AngularDemo\first.app>ng serve
+? Would you like to share pseudonymous usage data about this project with the Angular Team
+at Google under Google's Privacy Policy at https://policies.google.com/privacy. For more
+details and how to change this setting, see https://angular.io/analytics. Yes
+Thank you for sharing pseudonymous usage data. Should you change your mind, the following
+command will disable this feature entirely:
+ng analytics disable
+Global setting: enabled
+Local setting: enabled
+Effective status: enabled
+√ Browser application bundle generation complete.
+Initial Chunk Files | Names | Raw Size
+vendor.js | vendor | 2.04 MB |
+polyfills.js | polyfills | 314.27 kB |
+styles.css, styles.js | styles | 209.40 kB |
+main.js | main | 48.10 kB |
+runtime.js | runtime | 6.52 kB |
+| Initial Total | 2.60 MB
+Build at: 2023-04-30T11:58:54.785Z - Hash: de7375424e9d1332 - Time: 26832ms
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+√ Compiled successfully.
+Register-form
+Register-form.componenet.html
+<div class="container">
+<label for="uname"><b>Username </b></label>
+<input type="text" #uname placeholder="Enter Username " name="uname" required><br><br>
+<label for="uname"><b>Full Name </b></label>
+<input type="text" #fullname placeholder="Enter Full Name " name="fullname" required><br><br>
+<label for="uname"><b>Email </b></label>
+<input type="text" #email placeholder="Enter Email " name="email" required><br><br> <label for="uname"><b>Mobile Number </b></label>
+<input type="text" #mobileno placeholder="Enter Mobile Number " name="mobileno" required><br><br>
+<label for="psw"><b>Password </b></label>
+<input type="password" placeholder="Enter Password " name="psw" required><br><br>
+<label for="psw"><b>Repeat Password </b></label>
+<input type="password" placeholder="Enter Password " name="psw" required><br><br>
+<button (click)="getValue(uname.value,fullname.value,email.value,mobileno.value)">Register</button><br><br>
+</div>
+<div class="container" style="background-color:#f1f1f1">
+<button type="button" class="cancelbtn">Cancel</button>
+<span class="psw">Forgot <a href="#">password?</a></span>
+</div>
+<h1>Your Register Data is</h1>
+<p>Username: {{displayusername}}</p> <p>Fullname: {{displayname}}</p>
+<p>Email: {{displayemail}}</p>
+<p>Mobile No: {{displaymobileNo}}</p>
+Register-form.component.ts
+import { Component } from '@angular/core';
+@Component({
+selector: 'app-register-form',
+templateUrl: './register-form.component.html',
+styleUrls: ['./register-form.component.css']
+})
+export class RegisterFormComponent {
+title="Registration Form";
+displayusername="";
+displayname="";
+displayemail="";
+displaymobileNo="";
+getValue(uname:string,fullname:string,email:string,mobileno:string){
+this.displayusername=uname;
+this.displayname=fullname;
+this.displayemail=email;
+this.displaymobileNo=mobileno;
+}
+}
+User-login
+User-login.component.html
+<div class="container">
+<label for="uname"><b>Username</b></label>
+<input type="text" #uname placeholder="Enter Username" name="uname" required>
+<label for="psw"><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="psw" required>
+<button (click)="getValue(uname.value)">Login</button> <label>
+<input type="checkbox" checked="checked" name="remember"> Remember me </label>
+</div>
+<div class="container" style="background-color:#f1f1f1">
+<button type="button" class="cancelbtn">Cancel</button>
+<span class="psw">Forgot <a href="#">password?</a></span>
+</div>
+<p>Your username is: {{displayusername}}</p>
+User-login.component.css
+form { border: 3px solid #f1f1f1; } /* Full-width inputs */ input[type=text], input[type=password] { width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box; } /* Set a style for all buttons */ button {
+background-color: #04AA6D; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; width: 100%; } /* Add a hover effect for buttons */ button:hover { opacity: 0.8; } /* Extra style for the cancel button (red) */ .cancelbtn { width: auto; padding: 10px 18px; background-color: #f44336; } .container { padding: 16px; } span.psw { float: right; padding-top: 16px; } @media screen and (max-width: 300px) { span.psw { display: block; float: none; } .cancelbtn { width: 100%; } }
+User-login.component.ts
+import { Component } from '@angular/core';
+@Component({
+selector: 'app-user-login',
+templateUrl: './user-login.component.html',
+styleUrls: ['./user-login.component.css']
+})
+export class UserLoginComponent {
+title="Login Form";
+displayusername="";
+getValue(uname:string){
+this.displayusername=uname;
+}
+}
+App.component.html
+<app-register-form></app-register-form>
+<app-user-login></app-user-login>
+Output :-
+Register Form
+Login form
