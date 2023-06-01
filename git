@@ -1,0 +1,84 @@
+PS D:\git> git --version
+git version 2.40.0.windows.1
+PS D:\git> git config --global user.name "16Sayali"
+PS D:\git> git config --global user.email "shelarsayali990@gmail.com"
+PS D:\git> mkdir demo3      
+
+
+    Directory: D:\git
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        27-05-2023     10:33                demo3
+
+
+PS D:\git> cd demo3
+PS D:\git\demo3> git init
+Initialized empty Git repository in D:/git/demo3/.git/
+PS D:\git\demo3> git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+PS D:\git\demo3> git add doc.txt
+PS D:\git\demo3> git add --all
+PS D:\git\demo3> git commit -m "My first writing"
+[master (root-commit) f058f23] My first writing
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 doc.txt
+PS D:\git\demo3> git branch hello-world
+PS D:\git\demo3> git checkout hello-world
+Switched to branch 'hello-world'
+PS D:\git\demo3> git checkout master
+Switched to branch 'master'
+PS D:\git\demo3> https://github.com/
+https://github.com/ : The term 'https://github.com/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ https://github.com/
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (https://github.com/:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\git\demo3> https://github.com/
+https://github.com/ : The term 'https://github.com/' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the  
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ https://github.com/
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (https://github.com/:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\git\demo3> git remote add origin https://github.com/16Sayali/mydoc.git
+PS D:\git\demo3> get push --set-upstream origin master
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a 
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get push --set-upstream origin master
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\git\demo3> git push --set-upstream origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 218 bytes | 218.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/16Sayali/mydoc.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+PS D:\git\demo3> get fetch origin
+get : The term 'get' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a 
+path was included, verify that the path is correct and try again.
+At line:1 char:1
++ get fetch origin
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (get:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS D:\git\demo3> git fetch origin
+PS D:\git\demo3> git pull origin
+Already up to date.
+PS D:\git\demo3>
