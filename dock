@@ -1,4 +1,14 @@
 Assignment 2B
+docker --version
+node app.js
+docker build -t partb(foldername) .
+docker images
+
+
+FROM node:alpine
+COPY . /partb(foldername)
+CMD node /partb/app.js
+
 /* Getting available version of Node JS */
 PS C:\Users\HP> node --version v18.15.0
 /* Getting available version of Docker */
